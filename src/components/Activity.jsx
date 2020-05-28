@@ -30,9 +30,12 @@ const ActivityStyles = styled.div`
 const GifItem = styled.div`
   padding: 1rem;
   img {
-    max-width: 100%;
-    filter: alpha(opacity=60);
-    opacity: .6;
+    @media ${props => props.theme.size.md} {
+      max-width: 100%;
+      filter: alpha(opacity=60);
+      opacity: .6;
+    }
+
     &:hover {
       cursor: pointer;
       filter: alpha(opacity=100);
@@ -41,8 +44,34 @@ const GifItem = styled.div`
   }
 `;
 
-const GifContainer = styled.div`
+const GifSlideshow = styled.div`
   display: flex;
+  overflow-x: auto;
+  padding: 0 2.2rem;
+`;
+
+const GifContainer = styled.div`
+  position: relative;
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 2rem;
+
+    &.right {
+      left: 90%;
+    }
+    &.left {
+      left: 3%;
+    }
+  }
+
+  @media ${props => props.theme.size.md} {
+    .arrow {
+      display: none;
+    }
+  }
 `;
 
 const Activity = () => {
@@ -52,11 +81,15 @@ const Activity = () => {
         <h1>Activity</h1>
         <h2>Choose a thing</h2>
         <GifContainer>
-          {gifUrls.map(gif => (
-            <GifItem>
-              <img src={gif} />
-            </GifItem>
-          ))}
+          <GifSlideshow>
+            {gifUrls.map(gif => (
+              <GifItem>
+                <img src={gif} alt="TODO" />
+              </GifItem>
+            ))}
+          </GifSlideshow>
+          <div className="arrow left">⇦</div>
+          <div className="arrow right">⇨</div>
         </GifContainer>
       </ActivityStyles>
     </>

@@ -19,7 +19,7 @@ const Car = () => {
   return (
     <>
       <CarStyles>
-        <img src="https://media.giphy.com/media/WPtzVOKMymmZrJv8fO/giphy.gif" />
+        <img src="https://media.giphy.com/media/WPtzVOKMymmZrJv8fO/giphy.gif" alt="TODO" />
         <div className="text"><p>Black jack scuppers wherry transom black spot yawl Davy Jones' Locker me to go on account loot. Parley rope's end bucko fluke Jolly Roger grog log tender Sea Legs rutters. Buccaneer Letter of Marque crack Jennys tea cup wherry chase guns Sail ho coffer driver hempen halter plunder.</p></div>
       </CarStyles>
     </>
