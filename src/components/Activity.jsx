@@ -1,12 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import ModelInfo from './ModelInfo';
 
-const gifUrls = [
-  "https://media.giphy.com/media/5820U8HNbriEalrI0K/giphy.gif",
-  "https://media.giphy.com/media/5820U8HNbriEalrI0K/giphy.gif",
-  "https://media.giphy.com/media/5820U8HNbriEalrI0K/giphy.gif",
-  "https://media.giphy.com/media/5820U8HNbriEalrI0K/giphy.gif",
-  "https://media.giphy.com/media/5820U8HNbriEalrI0K/giphy.gif"
+// todo move to a file?
+const modelUrls = [
+  {
+    gifUrl: "https://media.giphy.com/media/5820U8HNbriEalrI0K/giphy.gif",
+    imageUrl: "https://amayei.nyc3.digitaloceanspaces.com/2019/10/58e336b26ee69cbfb21d906c57b8ac8f9cb53bdf.jpg",
+    explainerText: "Model 1"
+  },
+  {
+    gifUrl: "https://media.giphy.com/media/5820U8HNbriEalrI0K/giphy.gif",
+    imageUrl: "https://amayei.nyc3.digitaloceanspaces.com/2019/10/58e336b26ee69cbfb21d906c57b8ac8f9cb53bdf.jpg",
+    explainerText: "Model 2"
+  },
+  {
+    gifUrl: "https://media.giphy.com/media/5820U8HNbriEalrI0K/giphy.gif",
+    imageUrl: "https://amayei.nyc3.digitaloceanspaces.com/2019/10/58e336b26ee69cbfb21d906c57b8ac8f9cb53bdf.jpg",
+    explainerText: "Model 3"
+  },
+  {
+    gifUrl: "https://media.giphy.com/media/5820U8HNbriEalrI0K/giphy.gif",
+    imageUrl: "https://amayei.nyc3.digitaloceanspaces.com/2019/10/58e336b26ee69cbfb21d906c57b8ac8f9cb53bdf.jpg",
+    explainerText: "Model 4"
+  },
+  {
+    gifUrl: "https://media.giphy.com/media/5820U8HNbriEalrI0K/giphy.gif",
+    imageUrl: "https://amayei.nyc3.digitaloceanspaces.com/2019/10/58e336b26ee69cbfb21d906c57b8ac8f9cb53bdf.jpg",
+    explainerText: "Model 5"
+  }
 ];
 
 const ActivityStyles = styled.div`
@@ -27,7 +49,7 @@ const ActivityStyles = styled.div`
   }
 `;
 
-const GifItem = styled.div`
+const ModelItem = styled.div`
   padding: 1rem;
   img {
     @media ${props => props.theme.size.md} {
@@ -44,13 +66,13 @@ const GifItem = styled.div`
   }
 `;
 
-const GifSlideshow = styled.div`
+const ModelSlideshow = styled.div`
   display: flex;
   overflow-x: auto;
   padding: 0 2.2rem;
 `;
 
-const GifContainer = styled.div`
+const ModelContainer = styled.div`
   position: relative;
 
   .arrow {
@@ -75,22 +97,40 @@ const GifContainer = styled.div`
 `;
 
 const Activity = () => {
+  const clickModel = index => {
+    setCurrentlySelectedModel(index);
+
+    if (index === currentlySelectedModel && showModelInfo) {
+      setShowModelInfo(false)
+    } else {
+      setShowModelInfo(true);
+    }
+  }
+
+  const [showModelInfo, setShowModelInfo] = useState(false);
+  const [currentlySelectedModel, setCurrentlySelectedModel] = useState(0);
+
   return (
     <>
       <ActivityStyles>
         <h1>Activity</h1>
         <h2>Choose a thing</h2>
-        <GifContainer>
-          <GifSlideshow>
-            {gifUrls.map(gif => (
-              <GifItem>
-                <img src={gif} alt="TODO" />
-              </GifItem>
+        <ModelContainer>
+          <ModelSlideshow>
+            {modelUrls.map((model, index) => (
+              <ModelItem onClick={() => clickModel(index)}>
+                <img src={model.gifUrl} alt="TODO" />
+              </ModelItem>
             ))}
-          </GifSlideshow>
+          </ModelSlideshow>
           <div className="arrow left">⇦</div>
           <div className="arrow right">⇨</div>
-        </GifContainer>
+          <ModelInfo
+            show={showModelInfo}
+            imageUrl={modelUrls[currentlySelectedModel].imageUrl}
+            explainerText={modelUrls[currentlySelectedModel].explainerText}
+          />
+        </ModelContainer>
       </ActivityStyles>
     </>
   );

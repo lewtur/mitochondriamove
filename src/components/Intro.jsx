@@ -2,25 +2,29 @@ import React from 'react';
 import styled from 'styled-components';
 
 const VideoStyles = styled.div`
-  & {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    height: auto;
-    width: auto;
-    min-height: 100%;
-    min-width: 100%;
-    z-index: -9999;
-  }
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: auto;
+  width: auto;
+  min-height: 100%;
+  min-width: 100%;
+  z-index: -999;
+  background-color: black;
+  display: flex;
+  justify-content: center;  
+
   figure {
     margin: 0;
     position: relative;
   }
 
   video {
+    transform: translateX(10rem);
+
     @media ${props => props.theme.size.lg} {
-      width: 100%;
-      max-width: 100%;
+      height: 100vh;
+      transform: translateX(0);
     }
   }
 `;
@@ -32,10 +36,15 @@ const IntroText = styled.div`
   background-size: cover;
   margin-top: 800px;
   p {
-    font-size: 2rem;
+    color: white;
     margin: 0 2.5rem;
+    font-size: 1.7rem;
+    line-height: 3rem;
     @media ${props => props.theme.size.lg} {
       margin: 0 12.5rem;
+      padding-left: 30rem;
+      font-size: 2rem;
+      line-height: 4rem;
     }
     
   }
@@ -45,20 +54,18 @@ const Intro = () => {
   return (
     <>
       <VideoStyles>
-        <div>
           <video
-            src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            src="./intro.mp4"
             autoPlay="true"
             loop="true"
             muted="true"
           >
           </video>
-        </div>
       </VideoStyles>
 
       <IntroText>
         <p>
-          Matey Shiver me timbers pinnace hands grog Brethren of the Coast fluke log hang the jib Sea Legs. Run a shot across the bow reef gangplank American Main fluke rum heave to chase swing the lead plunder. Heave down hang the jib bucko lugsail log yardarm snow lee lateen sail Sail ho.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
         </p>
       </IntroText>
     </>
