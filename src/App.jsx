@@ -17,12 +17,12 @@ function App() {
     <ThemeProvider theme={theme}>
       <AppStyles>
         <section><Intro /></section>
-        <section><Car /></section>
-        <section><Activity /></section>
-        <section><ReadVideoExplanations /></section>
-        <section><FurtherReading /></section>
-        <section><Contact /></section>
-        <section><Footer /></section>
+        <section className="section-pad"><Car /></section>
+        <section className="section-pad"><Activity /></section>
+        <section className="section-pad"><ReadVideoExplanations /></section>
+        <section className="section-pad"><FurtherReading /></section>
+        <section className="section-pad"><Contact /></section>
+        <section className="section-pad"><Footer /></section>
       </AppStyles>
     </ThemeProvider>
   );

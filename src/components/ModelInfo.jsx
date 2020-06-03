@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 const ModelInfoStyles = styled.div`
 
   display: flex;
   flex-direction: column;
-  margin: 3rem 24rem;
+  margin: 3rem;
   margin-top: 0;
   text-align: justify;
   line-height: 2rem;
 
+  @media ${props => props.theme.size.md} {
+    flex-direction: row;
+    margin: 6rem;
+  }
+
   p {
     display: flex;
     font-size: 1.25rem;
-    margin: 3rem;
+
+    @media ${props => props.theme.size.md} {
+      margin: 3rem;
+    }
+  }
+
+  img {
+    max-width: 100%;
   }
 `;
 
@@ -26,6 +38,7 @@ const ModelInfo = ({
   if (!show) {
     return <></>;
   }
+
   return (
     <ModelInfoStyles>
       <p>{explainerText}</p>

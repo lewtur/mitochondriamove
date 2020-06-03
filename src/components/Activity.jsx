@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import ModelInfo from './ModelInfo';
 
@@ -7,35 +7,33 @@ const modelUrls = [
   {
     gifUrl: "./models/1.gif",
     imageUrl: "./models/1.jpg",
-    explainerText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum fusce ut placerat orci nulla pellentesque. Nisi est sit amet facilisis magna etiam tempor orci. Congue mauris rhoncus aenean vel. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Tortor at risus viverra adipiscing at in tellus integer feugiat."
+    explainerText: "The mitochondria are not going anywhere! They’re stuck in the same spot, and can’t travel, which means they can’t meet up. The social network here is very limited- there are barely any meet-ups at all."
   },
   {
     gifUrl: "./models/2.gif",
     imageUrl: "./models/2.jpg",
-    explainerText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum fusce ut placerat orci nulla pellentesque. Nisi est sit amet facilisis magna etiam tempor orci. Congue mauris rhoncus aenean vel. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Tortor at risus viverra adipiscing at in tellus integer feugiat."
+    explainerText: "The mitochondria in the middle aren’t moving- this prevents interactions from happening, and also prevents the delivery of energy across the cell! Mitochondria around the outside of the cell are in a state of constant disappearing and reappearing- this gives many interactions between only a couple of mitochondria at a time- shown in the really high number of pairs of them in the social network!"
   },
   {
     gifUrl: "./models/3.gif",
     imageUrl: "./models/3.jpg",
-    explainerText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum fusce ut placerat orci nulla pellentesque. Nisi est sit amet facilisis magna etiam tempor orci. Congue mauris rhoncus aenean vel. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Tortor at risus viverra adipiscing at in tellus integer feugiat."
+    explainerText: "There are lots of meet-ups happening here- but no spread across the cell! Imagine all delivery drivers in a city only going to two places- great for the people in those places, but not for the rest. The social network is really tightly packed, as there are so many individuals in one of two places all the time, and two individuals in the middle!"
   },
   {
     gifUrl: "./models/4.gif",
     imageUrl: "./models/4.jpg",
-    explainerText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum fusce ut placerat orci nulla pellentesque. Nisi est sit amet facilisis magna etiam tempor orci. Congue mauris rhoncus aenean vel. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Tortor at risus viverra adipiscing at in tellus integer feugiat."
+    explainerText: "Almost there! Although the individuals are moving quickly, they are not evenly spread across the cell. This is like a traffic jam for the cell- all the delivery drivers are close together, but stuck in one spot!"
   },
   {
     gifUrl: "./models/5.gif",
     imageUrl: "./models/5.jpg",
-    explainerText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum fusce ut placerat orci nulla pellentesque. Nisi est sit amet facilisis magna etiam tempor orci. Congue mauris rhoncus aenean vel. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Tortor at risus viverra adipiscing at in tellus integer feugiat."
+    explainerText: "Good choice! These mitochondria get to move around the cell, and are not stuck in one region. They interact frequently, and make use of the highways (actin filaments) running through the cell. This gives a social network with lots of links, and the opportunity to pass information on to neighbouring mitochondria."
   }
 ];
 
 const ActivityStyles = styled.div`
-  & {
-    background-color: black;
-    color: white;
-  }
+  background-color: black;
+  color: white;
 
   h1 {
     font-size: 3rem;
@@ -47,6 +45,17 @@ const ActivityStyles = styled.div`
     font-size: 1.75rem;
     text-align: center;
   }
+
+  & > p {
+    padding: 0 1.25rem;
+    @media ${props => props.theme.size.md} {
+      padding: 0 10rem;
+    }
+  }
+
+  .intro-text {
+    font-size: 1.5rem;
+  }
 `;
 
 const ModelItem = styled.div`
@@ -54,8 +63,8 @@ const ModelItem = styled.div`
   img {
     @media ${props => props.theme.size.md} {
       max-width: 100%;
-      filter: alpha(opacity=60);
-      opacity: .6;
+      filter: alpha(opacity=75);
+      opacity: .75;
     }
 
     &:hover {
@@ -68,7 +77,6 @@ const ModelItem = styled.div`
 
 const ModelSlideshow = styled.div`
   display: flex;
-  justify-content: center;
   overflow-x: auto;
   padding: 0 2.2rem;
 `;
@@ -111,11 +119,34 @@ const Activity = () => {
   const [showModelInfo, setShowModelInfo] = useState(false);
   const [currentlySelectedModel, setCurrentlySelectedModel] = useState(0);
 
+  const modelInfoRef = useRef(null);
+
+  useEffect(() => {
+    if (showModelInfo) {
+      modelInfoRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end',
+        inline: "nearest"
+      });
+    }
+  }, [currentlySelectedModel, showModelInfo]);
+
   return (
     <>
       <ActivityStyles>
         <h1>Activity</h1>
-        <h2>Choose a thing</h2>
+        <p className="intro-text">
+          To better understand the movement of these mitochondria, it helps to create fake cells, where
+          we control how fast the mitochondria move, how many highways (filaments) they have to
+          move on, and even how big the cell is.
+        </p>
+        <p className="intro-text">
+          We can then work out how different kinds of movement
+          help or hinder their travels across the cell, and the interactions they have with each other.
+        </p>
+        <p className="intro-text">
+          <strong>Below are 5 of these ‘fake’ cells- can you choose which one helps the mitochondria meet up the most, while covering the most area?</strong>
+        </p>
         <ModelContainer>
           <ModelSlideshow>
             {modelUrls.map((model, index) => (
@@ -126,12 +157,14 @@ const Activity = () => {
           </ModelSlideshow>
           <div className="arrow left">⇦</div>
           <div className="arrow right">⇨</div>
-          <ModelInfo
-            show={showModelInfo}
-            imageUrl={modelUrls[currentlySelectedModel].imageUrl}
-            explainerText={modelUrls[currentlySelectedModel].explainerText}
-          />
-        </ModelContainer>
+            </ModelContainer>
+          <div ref={modelInfoRef}>
+            <ModelInfo
+              show={showModelInfo}
+              imageUrl={modelUrls[currentlySelectedModel].imageUrl}
+              explainerText={modelUrls[currentlySelectedModel].explainerText}
+            />
+          </div>
       </ActivityStyles>
     </>
   );

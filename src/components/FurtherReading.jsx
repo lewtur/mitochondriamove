@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const FurtherReadingStyles = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0;
+  padding: 0 !important;
 
   @media ${props => props.theme.size.md} {
     flex-direction: row;

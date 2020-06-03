@@ -17,6 +17,10 @@ const CarStyles = styled.div`
     margin: 3rem;
     line-height: 2rem;
   }
+
+  img {
+    max-width: 100%;
+  }
 `;
 
 const Car = () => {
