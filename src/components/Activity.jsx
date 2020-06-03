@@ -5,29 +5,29 @@ import ModelInfo from './ModelInfo';
 // todo move to a file?
 const modelUrls = [
   {
-    gifUrl: "https://media.giphy.com/media/5820U8HNbriEalrI0K/giphy.gif",
-    imageUrl: "https://amayei.nyc3.digitaloceanspaces.com/2019/10/58e336b26ee69cbfb21d906c57b8ac8f9cb53bdf.jpg",
-    explainerText: "Model 1"
+    gifUrl: "./models/1.gif",
+    imageUrl: "./models/1.jpg",
+    explainerText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum fusce ut placerat orci nulla pellentesque. Nisi est sit amet facilisis magna etiam tempor orci. Congue mauris rhoncus aenean vel. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Tortor at risus viverra adipiscing at in tellus integer feugiat."
   },
   {
-    gifUrl: "https://media.giphy.com/media/5820U8HNbriEalrI0K/giphy.gif",
-    imageUrl: "https://amayei.nyc3.digitaloceanspaces.com/2019/10/58e336b26ee69cbfb21d906c57b8ac8f9cb53bdf.jpg",
-    explainerText: "Model 2"
+    gifUrl: "./models/2.gif",
+    imageUrl: "./models/2.jpg",
+    explainerText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum fusce ut placerat orci nulla pellentesque. Nisi est sit amet facilisis magna etiam tempor orci. Congue mauris rhoncus aenean vel. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Tortor at risus viverra adipiscing at in tellus integer feugiat."
   },
   {
-    gifUrl: "https://media.giphy.com/media/5820U8HNbriEalrI0K/giphy.gif",
-    imageUrl: "https://amayei.nyc3.digitaloceanspaces.com/2019/10/58e336b26ee69cbfb21d906c57b8ac8f9cb53bdf.jpg",
-    explainerText: "Model 3"
+    gifUrl: "./models/3.gif",
+    imageUrl: "./models/3.jpg",
+    explainerText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum fusce ut placerat orci nulla pellentesque. Nisi est sit amet facilisis magna etiam tempor orci. Congue mauris rhoncus aenean vel. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Tortor at risus viverra adipiscing at in tellus integer feugiat."
   },
   {
-    gifUrl: "https://media.giphy.com/media/5820U8HNbriEalrI0K/giphy.gif",
-    imageUrl: "https://amayei.nyc3.digitaloceanspaces.com/2019/10/58e336b26ee69cbfb21d906c57b8ac8f9cb53bdf.jpg",
-    explainerText: "Model 4"
+    gifUrl: "./models/4.gif",
+    imageUrl: "./models/4.jpg",
+    explainerText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum fusce ut placerat orci nulla pellentesque. Nisi est sit amet facilisis magna etiam tempor orci. Congue mauris rhoncus aenean vel. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Tortor at risus viverra adipiscing at in tellus integer feugiat."
   },
   {
-    gifUrl: "https://media.giphy.com/media/5820U8HNbriEalrI0K/giphy.gif",
-    imageUrl: "https://amayei.nyc3.digitaloceanspaces.com/2019/10/58e336b26ee69cbfb21d906c57b8ac8f9cb53bdf.jpg",
-    explainerText: "Model 5"
+    gifUrl: "./models/5.gif",
+    imageUrl: "./models/5.jpg",
+    explainerText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum fusce ut placerat orci nulla pellentesque. Nisi est sit amet facilisis magna etiam tempor orci. Congue mauris rhoncus aenean vel. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Tortor at risus viverra adipiscing at in tellus integer feugiat."
   }
 ];
 
@@ -68,6 +68,7 @@ const ModelItem = styled.div`
 
 const ModelSlideshow = styled.div`
   display: flex;
+  justify-content: center;
   overflow-x: auto;
   padding: 0 2.2rem;
 `;

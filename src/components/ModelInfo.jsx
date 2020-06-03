@@ -1,16 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const ModelInfoStyles = styled.div`
-  @keyframes slideDown {
-    from { max-height: 0 }
-    to { max-height: 20rem }
-  }
 
   display: flex;
-  animation-name: slideDown;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-out;
+  flex-direction: column;
+  margin: 3rem 24rem;
+  margin-top: 0;
+  text-align: justify;
+  line-height: 2rem;
 
   p {
     display: flex;
@@ -30,10 +28,10 @@ const ModelInfo = ({
   }
   return (
     <ModelInfoStyles>
-      {/* <img src={imageUrl} alt="TODO"></img> */}
       <p>{explainerText}</p>
+      <img src={imageUrl} alt="TODO"></img>
     </ModelInfoStyles>
   );
 }
- 
+
 export default ModelInfo;
