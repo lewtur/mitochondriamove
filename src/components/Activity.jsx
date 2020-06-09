@@ -79,6 +79,10 @@ const ModelSlideshow = styled.div`
   display: flex;
   overflow-x: auto;
   padding: 0 2.2rem;
+
+  @media ${props => props.theme.size.md} {
+    justify-content: center;
+  }
 `;
 
 const ModelContainer = styled.div`
@@ -107,6 +111,9 @@ const ModelContainer = styled.div`
 
 const Activity = () => {
   const clickModel = index => {
+    if (!atLeastOneClicked) {
+      setAtLeastOneClicked(true);
+    }
     setCurrentlySelectedModel(index);
 
     if (index === currentlySelectedModel && showModelInfo) {
@@ -116,18 +123,32 @@ const Activity = () => {
     }
   }
 
+  const closeModel = () => {
+    setShowModelInfo(false);
+    window.scrollTo({
+      behavior: "smooth",
+      top: slideshowRef.current.offsetTop - 200
+    });
+  }
+
+  const [atLeastOneClicked, setAtLeastOneClicked] = useState(false);
   const [showModelInfo, setShowModelInfo] = useState(false);
   const [currentlySelectedModel, setCurrentlySelectedModel] = useState(0);
 
   const modelInfoRef = useRef(null);
+  const slideshowRef = useRef(null);
 
   useEffect(() => {
     if (showModelInfo) {
-      modelInfoRef.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'end',
-        inline: "nearest"
+      window.scrollTo({
+        behavior: "smooth",
+        top: modelInfoRef.current.offsetTop - 200
       });
+    } else if (atLeastOneClicked) {
+      window.scrollTo({
+        behavior: "smooth",
+        top: slideshowRef.current.offsetTop - 200
+      })
     }
   }, [currentlySelectedModel, showModelInfo]);
 
@@ -147,7 +168,7 @@ const Activity = () => {
         <p className="intro-text">
           <strong>Below are 5 of these ‘fake’ cells- can you choose which one helps the mitochondria meet up the most, while covering the most area?</strong>
         </p>
-        <ModelContainer>
+        <ModelContainer ref={slideshowRef}>
           <ModelSlideshow>
             {modelUrls.map((model, index) => (
               <ModelItem onClick={() => clickModel(index)}>
@@ -157,14 +178,15 @@ const Activity = () => {
           </ModelSlideshow>
           <div className="arrow left">⇦</div>
           <div className="arrow right">⇨</div>
-            </ModelContainer>
-          <div ref={modelInfoRef}>
-            <ModelInfo
-              show={showModelInfo}
-              imageUrl={modelUrls[currentlySelectedModel].imageUrl}
-              explainerText={modelUrls[currentlySelectedModel].explainerText}
-            />
-          </div>
+        </ModelContainer>
+        <div ref={modelInfoRef}>
+          <ModelInfo
+            show={showModelInfo}
+            imageUrl={modelUrls[currentlySelectedModel].imageUrl}
+            explainerText={modelUrls[currentlySelectedModel].explainerText}
+            close={closeModel}
+          />
+        </div>
       </ActivityStyles>
     </>
   );

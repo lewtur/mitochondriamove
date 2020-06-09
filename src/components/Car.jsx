@@ -3,23 +3,47 @@ import styled from 'styled-components';
 
 const CarStyles = styled.div`
   display: flex;
-  background-color: green;
+  background-color: #81C784;
   flex-direction: column;
 
-  @media ${props => props.theme.size.md} {
-    flex-direction: row;
-  }
-
   p {
-    display: flex;
-    align-items: center;
-    font-size: 1.25rem;
+    font-size: 1.45rem;
     margin: 3rem;
-    line-height: 2rem;
+    line-height: 2.5rem;
   }
 
-  img {
-    max-width: 100%;
+  .top {
+    display: flex;
+    flex-direction: column;
+    @media ${props => props.theme.size.md} {
+      flex-direction: row;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .bottom {
+    p {
+      @media ${props => props.theme.size.md} {
+        padding: 0 5rem;
+      }
+    }
+  }
+
+  video {
+    object-fit: none;
+  }
+
+  .video-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media ${props => props.theme.size.md} {
+      width: 50%;
+    }
   }
 `;
 
@@ -27,11 +51,16 @@ const Car = () => {
   return (
     <>
       <CarStyles>
-        <div>
-          <img src="https://media.giphy.com/media/WPtzVOKMymmZrJv8fO/giphy.gif" alt="TODO" />
-        </div>
-        <div>
-
+        <div className="top">
+          <div className="video-container">
+            <video
+              src="./output_768.mp4"
+              autoPlay="true"
+              loop="true"
+              muted="true"
+            />
+            <span>Free Stock Footage by <a href="http://www.videezy.com">Videezy.com</a> </span>
+          </div>
           <p>
             Imagine a city with cars moving through it. This is a busy place. Each car has a different driver,
             and they’re all carrying different items to deliver or transport across the city. There are many
@@ -40,6 +69,8 @@ const Car = () => {
             off the highway, they must use side streets to get to their destination, and the cars can’t move
             as fast- but once they reach their destination, they can make their delivery!
         </p>
+        </div>
+        <div className="bottom">
           <p>
             The movement of mitochondria in the cell can be thought of in the same way. Each
             mitochondrion (car) has a different amount of mtDNA (its driver), and carries a different
@@ -47,7 +78,7 @@ const Car = () => {
             filaments (highways) to move across the cell quickly, but must pay in ATP (the energy currency
             of the cell). These mitochondria move about the cell making deliveries, keeping the cell
             working- and delivering energy to where it’s needed the most!
-        </p>
+          </p>
           <p>
             We study this movement in the city as whole. We know the population of mitochondria
             in plant cells move around in this way, but we’re looking to go deeper- why would mitochondria
