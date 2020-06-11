@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const CarStyles = styled.div`
   display: flex;
-  background-color: #81C784;
+  background-color: ${props => props.theme.green};
   flex-direction: column;
 
   p {

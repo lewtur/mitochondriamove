@@ -1,5 +1,5 @@
 const theme = {
-	primary: '#2A6041',
+	green: '#81C784',
 	size: {
         sm: '(min-width: 576px)',
         md: '(min-width: 768px)',

@@ -5,14 +5,13 @@ const ContactStyles = styled.div`
   background-color: wheat;
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.85rem;
     padding-left: 2rem;
-    padding-top: 2rem;
   }
 
   p {
     padding: 1rem 2rem;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
   }
 `;
 
@@ -33,7 +32,7 @@ const ContactHolder = styled.div`
 const Contact = () => {
   return (
     <ContactStyles>
-      <h2>HIT ME UP</h2>
+      <h2>GET IN CONTACT</h2>
       <p>I'd love to hear from you! If you enjoyed the site or if you have any further questions - ask me anything!</p>
       <ContactHolder>
         <div className="contact">

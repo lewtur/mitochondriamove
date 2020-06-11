@@ -8,6 +8,7 @@ import ReadVideoExplanations from './components/RealVideoExplanation';
 import FurtherReading from './components/FurtherReading';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Buildup from './components/Buildup';
 
 const AppStyles = styled.div`
 `;
@@ -18,6 +19,7 @@ function App() {
       <AppStyles>
         <section><Intro /></section>
         <section className="section-pad"><Car /></section>
+        <section className="section-pad"><Buildup /></section>
         <section className="section-pad"><Activity /></section>
         <section className="section-pad"><ReadVideoExplanations /></section>
         <section className="section-pad"><FurtherReading /></section>

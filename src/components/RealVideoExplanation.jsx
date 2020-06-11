@@ -1,16 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// can this component be replaced by the other?
-
 const RealVideoExplanationStyles = styled.div`
-  background-color: yellow;
-  display: flex;
-  flex-direction: column;
-
-  @media ${props => props.theme.size.md} {
-    flex-direction: row;
-  }
+  background-color: ${props => props.theme.green};
 
   p {
     display: flex;
@@ -24,8 +16,25 @@ const RealVideoExplanationStyles = styled.div`
 const ReadVideoExplanations = () => {
   return (
     <RealVideoExplanationStyles>
-      <img src="https://cdn.hswstatic.com/gif/african-tree-frog.jpg" alt="TODO"></img>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+      <p>
+        The video below (also at the top of this page) is taken from a real cell. By looking at plant
+        seedlings under the microscope, we can image the mitochondria as they move around. The
+        mitochondria themselves have a protein in them that glows- it’s called GFP and originates from
+        jellyfish! It’s really useful for looking inside cells at particular structures and movement. The red
+        blob in the middle is a chloroplast- the organelle responsible for using sunlight to provide food
+        for the plant.
+      </p>
+      <p>
+        Just as for the models of fake cells we’ve just seen, we can construct the social network of
+        these organelles as they move about. What can this tell us?
+      </p>
+      <p>IMAGES</p>
+      <p>
+        We can gather these social statistics, but also physical statistics, such as speed, angle of motion
+        and area covered. Together all this information provides us with a set of numbers with which to
+        compare to the ‘fake’ we get from our models. This is called statistical inference, and is the
+        same process you just did in the activity above, but using numbers, not just visually!
+      </p>
     </RealVideoExplanationStyles>
   );
 }
