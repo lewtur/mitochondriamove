@@ -1,6 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
+const customWidths = {
+  "./models/1.png": "60%",
+  "./models/2.png": "60%",
+  "./models/3.png": "50%",
+  "./models/4.png": "60%",
+  "./models/5.png": "50%",
+}
+
 const Close = styled.div`
   text-align: center;
   margin: 0;
@@ -33,7 +41,6 @@ const ModelInfoStyles = styled.div`
   }
 
   p {
-    display: flex;
     font-size: 1.25rem;
 
     @media ${props => props.theme.size.md} {
@@ -41,18 +48,29 @@ const ModelInfoStyles = styled.div`
     }
   }
 
-  img {
-    max-width: 50%;
+  .text {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      width: 25rem;
+      margin-left: 3rem;
+    }
   }
 
   .image-and-text {
     display: flex;
     flex-direction: column;
+    max-height: 35rem;
 
     @media ${props => props.theme.size.md} {
       flex-direction: row;
     }
   }
+`;
+
+const Image = styled.img`
+  max-width: ${props => props.customWidth};
 `;
 
 const ModelInfo = ({
@@ -69,8 +87,11 @@ const ModelInfo = ({
   return (
     <ModelInfoStyles>
       <div className="image-and-text">
-        <p>{explainerText}</p>
-        <img src={imageUrl} alt="TODO"></img>
+        <div className="text">
+          <p>{explainerText}</p>
+          <img src="./NetworkKey.png"></img>
+        </div>
+        <Image src={imageUrl} customWidth={customWidths[imageUrl]} alt="TODO"></Image>
       </div>
       <Close onClick={close}>
         CLOSE
