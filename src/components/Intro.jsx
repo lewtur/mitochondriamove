@@ -40,13 +40,18 @@ const IntroText = styled.div`
     margin: 0 2.5rem;
     font-size: 1.7rem;
     line-height: 3rem;
-    @media ${props => props.theme.size.lg} {
+    @media ${props => props.theme.size.xl} {
       margin: 0 12.5rem;
       padding-left: 30rem;
       font-size: 2rem;
       line-height: 4rem;
     }
-    
+    @media ${props => props.theme.size.lg} {
+      margin: 0 12.5rem;
+      padding-left: 15rem;
+      font-size: 2rem;
+      line-height: 4rem;
+    }
   }
 `;
 
@@ -54,18 +59,20 @@ const Intro = () => {
   return (
     <>
       <VideoStyles>
-          <video
-            src="./intro.mp4"
-            autoPlay="true"
-            loop="true"
-            muted="true"
-          >
-          </video>
+        <video
+          src="./intro.mp4"
+          autoPlay="true"
+          loop="true"
+          muted="true"
+        >
+        </video>
       </VideoStyles>
 
       <IntroText>
         <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+          What goes on inside plants? They may look still, but there’s actually a lot happening, if you look
+          a little closer. The video playing right now shows mitochondria, the energy producers of the
+          cell, whizzing around as they go about their very important business.
         </p>
       </IntroText>
     </>

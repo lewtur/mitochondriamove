@@ -154,7 +154,7 @@ const Activity = () => {
         top: slideshowRef.current.offsetTop - 200
       })
     }
-  }, [currentlySelectedModel, showModelInfo]);
+  }, [currentlySelectedModel, showModelInfo, atLeastOneClicked]);
 
   return (
     <>

@@ -15,15 +15,33 @@ const RealVideoExplanationStyles = styled.div`
   .review {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: center;
+
+    & > div {
+      height: 30rem;
+
+      &:first-of-type {
+        padding-bottom: 1rem;
+      }
+
+      @media ${props => props.theme.size.md} {
+        height: 20rem;
+        padding-bottom: 0!important;
+      }
+
+      @media ${props => props.theme.size.lg} {
+        height: 35rem;
+      }
+    }
 
     @media ${props => props.theme.size.md} {
+      justify-content: space-around;
       flex-direction: row
     }
 
     video, img {
-      height: 35rem;
-      width: 100%;
+      height: 100%;
+      max-width: 100%;
 
       @media ${props => props.theme.size.md} {
         width: auto;
@@ -41,7 +59,6 @@ const ImageContainer = styled.div`
   p {
     margin: 0;
   }
-
 
   img {
     max-width: 100%;
@@ -87,12 +104,16 @@ const ReadVideoExplanations = () => {
         for the plant.
       </p>
       <div className="review">
-        <div><video src="./intro.mp4" autoPlay="true" loop="true"muted="true" /></div>
-        <div><img src="./nice.png" /></div>
+        <div>
+          <video src="./intro.mp4" autoPlay="true" loop="true"muted="true" />
+        </div>
+        <div>
+          <img src="./nice.png" alt="TODO" />
+        </div>
       </div>
         <p>
           Just as for the models of fake cells we’ve just seen, we can construct the social network of
-          these organelles as they move about. What can this tell us?
+          these organelles (shown above) as they move about. What can this tell us?
       </p>
         <ImageContainer>
           <div>

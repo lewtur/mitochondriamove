@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const customWidths = {
@@ -51,11 +51,6 @@ const ModelInfoStyles = styled.div`
   .text {
     display: flex;
     flex-direction: column;
-
-    img {
-      width: 25rem;
-      margin-left: 3rem;
-    }
   }
 
   .image-and-text {
@@ -89,7 +84,6 @@ const ModelInfo = ({
       <div className="image-and-text">
         <div className="text">
           <p>{explainerText}</p>
-          <img src="./NetworkKey.png"></img>
         </div>
         <Image src={imageUrl} customWidth={customWidths[imageUrl]} alt="TODO"></Image>
       </div>

@@ -7,8 +7,7 @@ const BuildupStyles = styled.div`
 
   p {
     font-size: 1.45rem;
-    margin: 3rem;
-    line-height: 2.5rem;
+    margin: 3rem 1.25rem;
     @media ${props => props.theme.size.md} {
         padding-left: 5rem;
         padding-right: 5rem;
@@ -21,6 +20,18 @@ const BuildupStyles = styled.div`
     padding-top: 2rem;
     margin-top: 0;
   }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 95%;
+      @media ${props => props.theme.size.md} {
+        width: 80%;
+      }
+    }
+  }
+
 `;
 
 const Buildup = () => {
@@ -37,6 +48,9 @@ const Buildup = () => {
         mitochondria as a blue blob (node) and each time they meet up, we draw a stick (edge)
         between them. This way we get a complete history of who has ‘met up’ with who!
       </p>
+      <div className="image-container">
+        <img src="./text1922.png" alt="TODO"></img>
+      </div>
     </BuildupStyles>
   );
 }

@@ -8,8 +8,12 @@ const CarStyles = styled.div`
 
   p {
     font-size: 1.45rem;
-    margin: 3rem;
-    line-height: 2.5rem;
+    margin: 3rem 1.25rem;
+    line-height: 2.2rem;
+
+    @media ${props => props.theme.size.md} {
+      margin: 3rem;
+    }
   }
 
   .top {
