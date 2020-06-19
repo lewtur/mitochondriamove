@@ -49,7 +49,7 @@ const Buildup = () => {
         between them. This way we get a complete history of who has ‘met up’ with who!
       </p>
       <div className="image-container">
-        <img src="./text1922.png" alt="TODO"></img>
+        <img src="./text1922.png" alt="Diagram showing how mitochondria passing near eachother forms a connection in a social network"></img>
       </div>
     </BuildupStyles>
   );

@@ -91,7 +91,7 @@ const ModelInfo = ({
         <div className="text">
           <p>{explainerText}</p>
         </div>
-        <Image src={imageUrl} customWidth={customWidths[imageUrl]} alt="TODO"></Image>
+        <Image src={imageUrl} customWidth={customWidths[imageUrl]} alt="Social network of the selected gif"></Image>
       </div>
       <Close onClick={close}>
         CLOSE

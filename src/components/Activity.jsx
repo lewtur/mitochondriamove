@@ -2,32 +2,36 @@ import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import ModelInfo from './ModelInfo';
 
-// todo move to a file?
 const modelUrls = [
   {
     gifUrl: "./models/1.gif",
     imageUrl: "./models/1.png",
-    explainerText: "The mitochondria are not going anywhere! They’re stuck in the same spot, and can’t travel, which means they can’t meet up. The social network here is very limited- there are barely any meet-ups at all."
+    explainerText: "The mitochondria are not going anywhere! They’re stuck in the same spot, and can’t travel, which means they can’t meet up. The social network here is very limited- there are barely any meet-ups at all.",
+    altText: "Gif showing little green circles (mitochondria) moving around a black square (a plant cell). The mitochondria are barely moving and not interacting with each other."
   },
   {
     gifUrl: "./models/2.gif",
     imageUrl: "./models/2.png",
-    explainerText: "The mitochondria in the middle aren’t moving- this prevents interactions from happening, and also prevents the delivery of energy across the cell! Mitochondria around the outside of the cell are in a state of constant disappearing and reappearing- this gives many interactions between only a couple of mitochondria at a time- shown in the really high number of pairs of them in the social network!"
+    explainerText: "The mitochondria in the middle aren’t moving- this prevents interactions from happening, and also prevents the delivery of energy across the cell! Mitochondria around the outside of the cell are in a state of constant disappearing and reappearing- this gives many interactions between only a couple of mitochondria at a time- shown in the really high number of pairs of them in the social network!",
+    altText: "Gif showing little green circles (mitochondria) moving around a black square (a plant cell). The mitochondria round the edges of the cell are moving rapidly, but the mitochondria in the middle of the cell are barely moving at all."
   },
   {
     gifUrl: "./models/3.gif",
     imageUrl: "./models/3.png",
-    explainerText: "There are lots of meet-ups happening here- but no spread across the cell! Imagine all delivery drivers in a city only going to two places- great for the people in those places, but not for the rest. The social network is really tightly packed, as there are so many individuals in one of two places all the time, and two individuals in the middle!"
+    explainerText: "There are lots of meet-ups happening here- but no spread across the cell! Imagine all delivery drivers in a city only going to two places- great for the people in those places, but not for the rest. The social network is really tightly packed, as there are so many individuals in one of two places all the time, and two individuals in the middle!",
+    altText: "Gif showing little green circles (mitochondria) moving around a black square (a plant cell). The mitochondria are mostly bunched up in the bottom corner of the cell moving around each other, with a few more in the top corner of the cell moving around each other."
   },
   {
     gifUrl: "./models/4.gif",
     imageUrl: "./models/4.png",
-    explainerText: "Almost there! Although the individuals are moving quickly, they are not evenly spread across the cell. This is like a traffic jam for the cell- all the delivery drivers are close together, but stuck in one spot!"
+    explainerText: "Almost there! Although the individuals are moving quickly, they are not evenly spread across the cell. This is like a traffic jam for the cell- all the delivery drivers are close together, but stuck in one spot!",
+    altText: "Gif showing little green circles (mitochondria) moving around a black square (a plant cell). The mitochondria are mostly hugging the edges of the cell, with a few stragglers in the middle of the cell."
   },
   {
     gifUrl: "./models/5.gif",
     imageUrl: "./models/5.png",
-    explainerText: "Good choice! These mitochondria get to move around the cell, and are not stuck in one region. They interact frequently, and make use of the highways (actin filaments) running through the cell. This gives a social network with lots of links, and the opportunity to pass information on to neighbouring mitochondria."
+    explainerText: "Good choice! These mitochondria get to move around the cell, and are not stuck in one region. They interact frequently, and make use of the highways (actin filaments) running through the cell. This gives a social network with lots of links, and the opportunity to pass information on to neighbouring mitochondria.",
+    altText: "Gif showing little green circles (mitochondria) moving around a black square (a plant cell). The mitochondria are moving very freely around all parts of the cell."
   }
 ];
 
@@ -177,7 +181,7 @@ const Activity = () => {
           <ModelSlideshow>
             {modelUrls.map((model, index) => (
               <ModelItem onClick={() => clickModel(index)}>
-                <img src={model.gifUrl} alt="TODO" />
+                <img src={model.gifUrl} alt={model.altText} />
               </ModelItem>
             ))}
           </ModelSlideshow>

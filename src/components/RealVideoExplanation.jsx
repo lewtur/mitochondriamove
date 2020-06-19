@@ -115,10 +115,10 @@ const ReadVideoExplanations = () => {
       </p>
       <div className="review">
         <div>
-          <video src="./intro.mp4" autoPlay="true" loop="true"muted="true" />
+          <video src="./intro.mp4" autoPlay="true" loop="true" muted="true" />
         </div>
         <div>
-          <img src="./nice.png" alt="TODO" />
+          <img src="./nice.png" alt="Social network of the video" />
         </div>
       </div>
         <p>
@@ -128,15 +128,15 @@ const ReadVideoExplanations = () => {
         <ImageContainer>
           <div>
             <p><strong>How many neighbours each mitochondria has had during the video</strong></p>
-            <img src="StatPic1.png" alt="TODO" />
+            <img src="StatPic1.png" alt="Diagram showing a graph which has one red node, connected to four black nodes, showing that the red node has 4 neighbours." />
           </div>
           <div>
             <p><strong>How many different neighbourhoods there are</strong></p>
-            <img src="StatPic2.png" alt="TODO" />
+            <img src="StatPic2.png" alt="Diagram showing 5 clusters of nodes in a graph, showing that there are 5 neighborhoods in this network" />
           </div>
           <div>
             <p><strong>How many interactions would you have to go through to get from one side to the other</strong></p>
-            <img src="StatPic3.png" alt="TODO" />
+            <img src="StatPic3.png" alt="Diagram showing one cluster of nodes and a highlighted path going from one side to the other" />
           </div>
         </ImageContainer>
         <p>
