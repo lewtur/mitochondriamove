@@ -31,41 +31,47 @@ const Close = styled.div`
 const ModelInfoStyles = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 3rem;
-  margin-top: 0;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  padding-bottom: 2rem;
   text-align: justify;
   line-height: 2rem;
-
+  
   @media ${props => props.theme.size.md} {
     margin: 6rem;
   }
-
+  
   p {
     font-size: 1.25rem;
-
+    
     @media ${props => props.theme.size.md} {
       margin: 3rem;
     }
   }
-
+  
   .text {
     display: flex;
     flex-direction: column;
   }
-
+  
   .image-and-text {
     display: flex;
     flex-direction: column;
-    max-height: 35rem;
-
+    align-items: center;
+    
     @media ${props => props.theme.size.md} {
       flex-direction: row;
+      max-height: 35rem;
     }
   }
 `;
 
 const Image = styled.img`
-  max-width: ${props => props.customWidth};
+  max-width: 100%;
+  
+  @media ${props => props.theme.size.md} {
+    max-width: ${props => props.customWidth};
+  }
 `;
 
 const ModelInfo = ({

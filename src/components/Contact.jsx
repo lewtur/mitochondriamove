@@ -7,6 +7,8 @@ const ContactStyles = styled.div`
   h2 {
     font-size: 1.85rem;
     padding-left: 2rem;
+    margin-top: 0;
+    padding-top: 2rem;
   }
 
   p {

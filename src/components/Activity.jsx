@@ -55,6 +55,7 @@ const ActivityStyles = styled.div`
 
   .intro-text {
     font-size: 1.5rem;
+    padding-bottom: 1rem;
   }
 `;
 

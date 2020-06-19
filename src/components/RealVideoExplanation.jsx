@@ -12,6 +12,16 @@ const RealVideoExplanationStyles = styled.div`
     line-height: 2rem;
   }
 
+  p:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 3rem;
+  }
+
+  p:first-of-type {
+    margin-top: 0;
+    padding-top: 2rem;
+  }
+
   .review {
     display: flex;
     flex-direction: column;
