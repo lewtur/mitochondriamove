@@ -14,6 +14,10 @@ const FurtherReadingStyles = styled.div`
   p {
     padding-left: 2rem;
     font-size: 1.25rem;
+
+    &:last-of-type {
+      padding-bottom: 2rem;
+    }
   }
 
   li {
