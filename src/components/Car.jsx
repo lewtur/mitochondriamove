@@ -70,7 +70,7 @@ const Car = () => {
             Imagine a city with cars moving through it. This is a busy place. Each car has a different driver,
             and they’re all carrying different items to deliver or transport across the city. There are many
             routes cross the city, some on the main roads, highways that cut through the city. Travelling
-            along these is the quickest route the city, but the cars must pay to use them. When the cars get
+            along these is the quickest route through the city, but the cars must pay to use them. When the cars get
             off the highway, they must use side streets to get to their destination, and the cars can’t move
             as fast- but once they reach their destination, they can make their delivery!
         </p>
@@ -78,7 +78,7 @@ const Car = () => {
         <div className="bottom">
           <p>
             The movement of mitochondria in the cell can be thought of in the same way. Each
-            mitochondrion (car) has a different amount of mtDNA (its driver), and carries a different
+            mitochondrion (car) has a different amount of mtDNA (its passenger), and carries a different
             amount of energy, metabolites and proteins (its cargo). The mitochondria can use actin
             filaments (highways) to move across the cell quickly, but must pay in ATP (the energy currency
             of the cell). These mitochondria move about the cell making deliveries, keeping the cell

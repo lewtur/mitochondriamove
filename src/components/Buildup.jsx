@@ -46,10 +46,10 @@ const Buildup = () => {
       <p>
         An interaction here is when two mitochondria come close to each other. We draw each
         mitochondria as a blue blob (node) and each time they meet up, we draw a stick (edge)
-        between them. This way we get a complete history of who has ‘met up’ with who!
+        between them. This way we get a complete history of who meets up with whom!
       </p>
       <div className="image-container">
-        <img src="./text1922.png" alt="Diagram showing how mitochondria passing near eachother forms a connection in a social network"></img>
+        <img loading="lazy" src="./text1922.png" alt="Diagram showing how mitochondria passing near eachother forms a connection in a social network"></img>
       </div>
     </BuildupStyles>
   );
