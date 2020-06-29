@@ -115,7 +115,7 @@ const ReadVideoExplanations = () => {
       </p>
       <div className="review">
         <div>
-          <video src="./intro.mp4" autoPlay="true" loop="true" muted="true" />
+          <video src="./intro.mp4" autoPlay={true} loop={true} muted={true} />
         </div>
         <div>
           <img loading="lazy" src="./nice.png" alt="Social network of the video" />

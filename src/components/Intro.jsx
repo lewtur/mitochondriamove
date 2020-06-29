@@ -30,7 +30,7 @@ const VideoStyles = styled.div`
 `;
 
 const IntroText = styled.div`
-  height: 100vh;
+  height: 150vh;
   min-height: 100%;
   min-width: 100%;
   background-size: cover;
@@ -61,9 +61,9 @@ const Intro = () => {
       <VideoStyles>
         <video
           src="./intro.mp4"
-          autoPlay="true"
-          loop="true"
-          muted="true"
+          autoPlay={true}
+          loop={true}
+          muted={true}
         >
         </video>
       </VideoStyles>

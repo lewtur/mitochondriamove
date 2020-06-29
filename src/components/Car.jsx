@@ -60,9 +60,9 @@ const Car = () => {
           <div className="video-container">
             <video
               src="./output_768.mp4"
-              autoPlay="true"
-              loop="true"
-              muted="true"
+              autoPlay={true}
+              loop={true}
+              muted={true}
             />
             <span>Free Stock Footage by <a href="http://www.videezy.com">Videezy.com</a> </span>
           </div>

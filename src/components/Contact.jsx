@@ -39,11 +39,11 @@ const Contact = () => {
       <ContactHolder>
         <div className="contact">
           <i className="fas fa-envelope"></i>
-          <a href="mailto:joannachustecki@swag.com">Email me</a>
+          <a href="mailto:joannachustecki@hotmail.co.uk">Email me</a>
         </div>
         <div className="contact">
           <i className="fab fa-twitter"></i>
-          <a href="https://twitter.com">Tweet me</a>
+          <a href="https://twitter.com/ChusteckiSci">Tweet me</a>
         </div>
       </ContactHolder>
     </ContactStyles >

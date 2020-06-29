@@ -145,12 +145,6 @@ const Activity = () => {
 
   useEffect(() => {
     if (showModelInfo) {
-      // window.dataLayer.push({
-      //   event: `Model clicked`,
-      //   modelNumber: currentlySelectedModel
-      // })
-
-      console.log('SENDING EVENT');
       window.ga('send', 'event', 'Model clicked', 'click', currentlySelectedModel)
       window.scrollTo({
         behavior: "smooth",
@@ -183,7 +177,7 @@ const Activity = () => {
         <ModelContainer ref={slideshowRef}>
           <ModelSlideshow>
             {modelUrls.map((model, index) => (
-              <ModelItem onClick={() => clickModel(index)}>
+              <ModelItem onClick={() => clickModel(index)} key={`model-${index}`}>
                 <img loading="lazy" src={model.gifUrl} alt={model.altText} />
               </ModelItem>
             ))}

@@ -22,8 +22,7 @@ const BuildupStyles = styled.div`
   }
 
   .image-container {
-    display: flex;
-    justify-content: center;
+    text-align: center;
     img {
       width: 95%;
       @media ${props => props.theme.size.md} {
