@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const VideoStyles = styled.div`
@@ -55,7 +55,40 @@ const IntroText = styled.div`
   }
 `;
 
+const ScrollDownContainer = styled.div`
+  color: white;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 2rem;
+  font-size: 1.2rem;
+  opacity: ${props => props.opacity};
+`;
+
+const SCROLL_MAX = 50;
+
 const Intro = () => {
+  const [scrollOpacity, setScrollOpacity] = useState("1");
+
+  const onScroll = () => {
+    const scroll = window.scrollY;
+    if (scroll > SCROLL_MAX) {
+      setScrollOpacity("0");
+    } else if (scroll <= 1) {
+      setScrollOpacity("1");
+    } else {
+      const opacity = scroll / SCROLL_MAX;
+      setScrollOpacity(((1 - opacity) + "").substring(0, 4))
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll);
+
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <>
       <VideoStyles>
@@ -67,6 +100,11 @@ const Intro = () => {
         >
         </video>
       </VideoStyles>
+
+      <ScrollDownContainer opacity={scrollOpacity}>
+         <div className="text">scroll down</div>
+         <div className="chevron">⌄</div>
+      </ScrollDownContainer>
 
       <IntroText>
         <p>
